@@ -1,0 +1,8 @@
+
+# Biancheti Engenharia
+# Configuracao de rastreamento
+
+User-agent: *
+Allow: /
+
+Sitemap: https://biancheti.com.br/sitemap.xml

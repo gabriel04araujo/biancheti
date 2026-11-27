@@ -1,0 +1,513 @@
+
+/* =========================================================
+   BIANCHETI ENGENHARIA
+   ANIMATIONS.CSS — ANIMAÇÕES E MICROINTERAÇÕES
+   ========================================================= */
+
+/* ==================== CONFIGURAÇÕES ==================== */
+
+:root {
+  --reveal-duration: 0.85s;
+  --reveal-distance: 45px;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==================== REVEAL ON SCROLL ==================== */
+
+/*
+  O JavaScript adicionará a classe .js-animations
+  ao elemento html e ativará .visible nos elementos
+  que entrarem na área visível da página.
+
+  Sem JavaScript, o conteúdo permanecerá visível.
+*/
+
+.js-animations .reveal {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-distance), 0);
+
+  transition:
+    opacity var(--reveal-duration) var(--reveal-ease),
+    transform var(--reveal-duration) var(--reveal-ease);
+}
+
+.js-animations .reveal.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Evita conflitos entre reveal e os efeitos 3D */
+.js-animations .interactive-card.reveal.visible {
+  transform: translate3d(0, 0, 0);
+}
+
+/* ==================== HERO ==================== */
+
+@keyframes heroBackgroundReveal {
+  from {
+    opacity: 0.4;
+    transform: scale(1.13);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+.hero-background {
+  animation: none;
+  transition: opacity 1.5s ease;
+}
+
+@keyframes heroLogoReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.92);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.hero-logo {
+  animation: heroLogoReveal 1.25s ease-out 0.15s both;
+}
+
+/* Entrada sequencial dos textos da capa */
+
+.hero .hero-eyebrow {
+  transition-delay: 0.15s;
+}
+
+.hero .hero-title {
+  transition-delay: 0.3s;
+}
+
+.hero .hero-subtitle {
+  transition-delay: 0.45s;
+}
+
+.hero .btn {
+  transition:
+    opacity var(--reveal-duration) var(--reveal-ease) 0.6s,
+    transform var(--reveal-duration) var(--reveal-ease) 0.6s,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ==================== BOTÃO PULSANTE ==================== */
+
+@keyframes buttonPulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(183, 255, 60, 0.35),
+      0 0 25px rgba(183, 255, 60, 0.1);
+  }
+
+  65% {
+    box-shadow:
+      0 0 0 16px rgba(183, 255, 60, 0),
+      0 0 35px rgba(183, 255, 60, 0.1);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(183, 255, 60, 0),
+      0 0 25px rgba(183, 255, 60, 0.1);
+  }
+}
+
+.btn-pulse {
+  animation: buttonPulse 2.8s ease-out infinite;
+}
+
+/* ==================== INDICADOR DE SCROLL ==================== */
+
+@keyframes scrollLineMove {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  45% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(12px) scaleY(0.5);
+  }
+}
+
+.scroll-line {
+  animation: scrollLineMove 2s ease-in-out infinite;
+}
+
+@keyframes scrollTextFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-indicator > span:first-child {
+  animation: scrollTextFloat 3s ease-in-out infinite;
+}
+
+/* ==================== HEADER ==================== */
+
+.site-header {
+  animation: headerReveal 0.9s ease-out both;
+}
+
+@keyframes headerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== CARDS INTERATIVOS ==================== */
+
+.interactive-card {
+  will-change: auto;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/*
+  O efeito de iluminação acompanha o mouse,
+  utilizando --mouse-x e --mouse-y definidos
+  posteriormente no JavaScript.
+*/
+
+.interactive-card:hover {
+  box-shadow:
+    0 20px 65px rgba(0, 0, 0, 0.22),
+    inset 0 0 35px rgba(183, 255, 60, 0.015);
+}
+
+.card-glow {
+  transition: opacity 0.4s ease;
+}
+
+/* Linha neon na parte superior dos cards */
+
+.business-card::before,
+.solution-card::before,
+.testimonial-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent),
+    transparent
+  );
+
+  transform: translateX(-50%);
+  transition: width 0.5s ease;
+}
+
+.business-card:hover::before,
+.solution-card:hover::before,
+.testimonial-card:hover::before {
+  width: 85%;
+}
+
+/* ==================== NÚMEROS ==================== */
+
+/* O valor numérico será atualizado pelo JS */
+
+.counter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+.number-item {
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.number-item:hover {
+  transform: translateY(-7px);
+}
+
+.number-item:hover .number-plus {
+  text-shadow: 0 0 25px rgba(183, 255, 60, 0.4);
+}
+
+.number-plus {
+  transition: text-shadow 0.4s ease;
+}
+
+/* ==================== NEGÓCIOS ==================== */
+
+.business-card h3,
+.business-card p {
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.business-card:hover h3 {
+  color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.business-card:hover p {
+  color: var(--color-text);
+}
+
+/* ==================== ABAS DE SOLUÇÕES ==================== */
+
+.tab-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-button::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(183, 255, 60, 0.08);
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tab-button:not(.active):hover::before {
+  opacity: 1;
+}
+
+.tab-panel.active {
+  animation: tabContentReveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes tabContentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-panel.active .solution-card {
+  animation: solutionCardReveal 0.55s ease both;
+}
+
+@keyframes solutionCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-panel.active .solution-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.tab-panel.active .solution-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.tab-panel.active .solution-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.tab-panel.active .solution-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.tab-panel.active .solution-card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+/* ==================== RESULTADOS ==================== */
+
+@keyframes resultOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.results-graphic {
+  animation: resultOrbit 28s linear infinite;
+}
+
+.results-graphic::before {
+  border-style: dashed;
+  border-color: rgba(183, 255, 60, 0.25);
+}
+
+@keyframes watermarkFloat {
+  0%, 100% {
+    transform: translateX(-10px);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.results-watermark {
+  animation: watermarkFloat 9s ease-in-out infinite;
+}
+
+/* ==================== CAMPOS DO FORMULÁRIO ==================== */
+
+.form-group input,
+.form-group textarea {
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  transform: translateY(-2px);
+}
+
+.contact-form .btn:active {
+  transform: scale(0.98);
+}
+
+/* ==================== CURSOR ==================== */
+
+.custom-cursor,
+.cursor-glow {
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.custom-cursor {
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.custom-cursor.cursor-hover {
+  width: 35px;
+  height: 35px;
+
+  background: rgba(183, 255, 60, 0.2);
+  border: 1px solid var(--color-accent);
+}
+
+/* ==================== MENU MOBILE ==================== */
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ==================== ACESSIBILIDADE ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+  .js-animations .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .partners-track {
+    animation: none !important;
+  }
+
+  .results-graphic,
+  .results-watermark {
+    animation: none !important;
+  }
+
+  .custom-cursor,
+  .cursor-glow {
+    display: none !important;
+  }
+}
+
+/* ==================== DISPOSITIVOS TOUCH ==================== */
+
+@media (hover: none), (pointer: coarse) {
+
+  .custom-cursor,
+  .cursor-glow {
+    display: none !important;
+  }
+
+  .interactive-card {
+    transform: none !important;
+  }
+
+  .interactive-card:hover {
+    box-shadow: none;
+  }
+
+  .number-item:hover {
+    transform: none;
+  }
+}

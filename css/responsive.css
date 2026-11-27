@@ -1,0 +1,2256 @@
+
+/* =========================================================
+   BIANCHETI ENGENHARIA
+   RESPONSIVE.CSS — RESPONSIVIDADE
+   ========================================================= */
+
+/* ==================== TELAS GRANDES ==================== */
+
+@media (min-width: 1600px) {
+
+  :root {
+    --container-width: 1400px;
+  }
+
+  .hero-content {
+    padding-top: 170px;
+  }
+
+  .hero-title {
+    font-size: 6.5rem;
+  }
+
+  .section-padding {
+    padding: 160px 0;
+  }
+
+  .business-card {
+    min-height: 330px;
+  }
+
+  .solution-card {
+    min-height: 255px;
+  }
+}
+
+/* ==================== NOTEBOOKS ==================== */
+
+@media (max-width: 1199px) {
+
+  :root {
+    --header-height: 78px;
+  }
+
+  .container {
+    width: min(92%, var(--container-width));
+  }
+
+  .section-padding {
+    padding: 105px 0;
+  }
+
+  .nav-menu {
+    gap: 19px;
+  }
+
+  .nav-link {
+    font-size: 0.72rem;
+  }
+
+  .nav-brand img {
+    width: 130px;
+  }
+
+  .hero-title {
+    max-width: 900px;
+  }
+
+  .business-grid,
+  .solutions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .business-card {
+    min-height: 285px;
+  }
+
+  .results-showcase {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .results-content {
+    padding: 45px;
+  }
+
+  .contact-layout {
+    gap: 45px;
+  }
+}
+
+/* ==================== TABLETS ==================== */
+
+@media (max-width: 991px) {
+
+  :root {
+    --header-height: 74px;
+  }
+
+  .section-padding {
+    padding: 90px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 48px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+  }
+
+  /* HEADER MOBILE */
+
+  .site-header {
+    height: var(--header-height);
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 1002;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1001;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 10px;
+
+    width: min(400px, 100%);
+    height: 100vh;
+    height: 100dvh;
+
+    padding: 95px 45px 45px;
+
+    background: rgba(8, 8, 8, 0.98);
+    border-left: 1px solid var(--color-border);
+
+    overflow-y: auto;
+
+    transform: translateX(105%);
+    visibility: hidden;
+
+    transition:
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0.5s;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+
+    min-height: 50px;
+    padding: 9px 0;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .nav-link::after {
+    bottom: 5px;
+  }
+
+  .nav-contact {
+    justify-content: center;
+    margin-top: 15px;
+    padding: 14px 22px;
+  }
+
+  /* HERO */
+
+  .hero-content {
+    padding-top: 135px;
+    padding-bottom: 125px;
+  }
+
+  .hero-title {
+    max-width: 780px;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+  }
+
+  .hero-logo {
+    width: 205px;
+    margin-bottom: 35px;
+  }
+
+  /* NÚMEROS */
+
+  .numbers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .number-item {
+    min-height: 165px;
+  }
+
+  /* SOBRE */
+
+  .about-card {
+    padding: 45px;
+  }
+
+  /* DEPOIMENTOS */
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonial-card {
+    min-height: 290px;
+  }
+
+  /* RESULTADOS */
+
+  .results-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .results-visual {
+    min-height: 350px;
+  }
+
+  .results-content {
+    padding: 50px;
+  }
+
+  /* CONTATO */
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+  }
+
+  .contact-form-wrapper {
+    max-width: 100%;
+  }
+}
+
+/* ==================== SMARTPHONES ==================== */
+
+@media (max-width: 767px) {
+
+  :root {
+    --header-height: 68px;
+  }
+
+  html {
+    scroll-padding-top: 68px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .section-padding {
+    padding: 75px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 38px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2rem, 8vw, 3.1rem);
+    letter-spacing: -0.05em;
+  }
+
+  .section-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+  }
+
+  /* HEADER */
+
+  .nav-brand img {
+    width: 120px;
+    max-height: 48px;
+  }
+
+  .nav-menu {
+    padding: 85px 32px 35px;
+  }
+
+  /* HERO */
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-background {
+    background-position: center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.58) 0%,
+        rgba(0, 0, 0, 0.65) 45%,
+        rgba(8, 8, 8, 0.98) 100%
+      );
+  }
+
+  .hero-content {
+    padding-top: 115px;
+  }
+
+  .hero-title {
+    max-width: 570px;
+
+    font-size: clamp(2.3rem, 9vw, 3.9rem);
+    line-height: 1.13;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-subtitle {
+    max-width: 490px;
+    margin: 26px 0 35px;
+
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .scroll-indicator {
+    bottom: 22px;
+  }
+
+  .scroll-line {
+    height: 30px;
+  }
+
+  /* NÚMEROS */
+
+  .numbers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .number-item {
+    min-height: 145px;
+    padding: 20px 10px;
+  }
+
+  .number-value {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+
+  .number-item p {
+    font-size: 0.73rem;
+    line-height: 1.5;
+  }
+
+  /* SOBRE */
+
+  .about-card {
+    padding: 30px 25px;
+    border-radius: 0;
+  }
+
+  .about-content p {
+    font-size: 0.94rem;
+    line-height: 1.9;
+  }
+
+  .about-content p + p {
+    margin-top: 23px;
+  }
+
+  /* NEGÓCIOS */
+
+  .business-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .business-card {
+    min-height: 250px;
+    padding: 25px;
+  }
+
+  .business-card h3 {
+    margin-top: 42px;
+    margin-bottom: 12px;
+
+    font-size: 1.15rem;
+  }
+
+  .business-card p {
+    font-size: 0.8rem;
+  }
+
+  .card-decoration {
+    top: 21px;
+    right: 22px;
+    font-size: 1.2rem;
+  }
+
+  /* SOLUÇÕES */
+
+  .solutions-tabs {
+    flex-wrap: nowrap;
+    gap: 8px;
+
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .solutions-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-button {
+    flex-shrink: 0;
+    padding: 12px 18px;
+    font-size: 0.75rem;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .solution-card {
+    min-height: 225px;
+    padding: 25px;
+  }
+
+  .solution-card h3 {
+    font-size: 1.08rem;
+  }
+
+  .solution-card p {
+    font-size: 0.8rem;
+    line-height: 1.75;
+  }
+
+  /* RESULTADOS */
+
+  .results-showcase {
+    border-radius: 0;
+  }
+
+  .results-visual {
+    min-height: 290px;
+  }
+
+  .results-watermark {
+    font-size: 4.5rem;
+  }
+
+  .results-graphic {
+    width: 160px;
+    height: 160px;
+
+    box-shadow:
+      0 0 0 30px rgba(183, 255, 60, 0.025),
+      0 0 0 60px rgba(183, 255, 60, 0.015);
+  }
+
+  .results-content {
+    padding: 35px 28px;
+  }
+
+  .results-content p {
+    font-size: 0.96rem;
+  }
+
+  /* DEPOIMENTOS */
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .testimonial-card {
+    min-height: 245px;
+    padding: 30px;
+  }
+
+  .testimonial-number {
+    margin-bottom: 38px;
+  }
+
+  /* PARCEIROS */
+
+  .partners-track {
+    padding: 30px 0;
+  }
+
+  .partners-group {
+    gap: 50px;
+    padding-right: 50px;
+  }
+
+  .partner-item {
+    flex-basis: 135px;
+    height: 75px;
+  }
+
+  .partner-item img {
+    max-height: 60px;
+  }
+
+  .partners-marquee::before,
+  .partners-marquee::after {
+    width: 55px;
+  }
+
+  /* CONTATO */
+
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-form-wrapper {
+    padding: 30px 24px;
+    border-radius: 0;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+
+  .site-footer {
+    padding: 50px 0 30px;
+  }
+
+  .footer-top {
+    padding-bottom: 35px;
+  }
+
+  .footer-brand img {
+    width: 120px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* ==================== CELULARES PEQUENOS ==================== */
+
+@media (max-width: 480px) {
+
+  .container {
+    width: 89%;
+  }
+
+  .section-padding {
+    padding: 65px 0;
+  }
+
+  .hero-logo {
+    width: 145px;
+    margin-bottom: 25px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 9.2vw, 2.85rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.87rem;
+  }
+
+  .hero-content {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+
+  .hero .btn {
+    min-height: 54px;
+    padding: 15px 20px;
+    font-size: 0.69rem;
+  }
+
+  .numbers-grid {
+    gap: 5px;
+  }
+
+  .number-item {
+    min-height: 135px;
+  }
+
+  .number-value {
+    font-size: clamp(2.25rem, 9vw, 3rem);
+  }
+
+  .number-item p {
+    font-size: 0.7rem;
+  }
+
+  .about-card {
+    padding: 25px 20px;
+  }
+
+  .about-content p {
+    font-size: 0.88rem;
+  }
+
+  /* Cards em uma coluna para preservar legibilidade */
+
+  .business-grid,
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-card {
+    min-height: 230px;
+    padding: 30px;
+  }
+
+  .business-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .business-card p {
+    font-size: 0.88rem;
+  }
+
+  .solution-card {
+    min-height: auto;
+    padding: 30px;
+  }
+
+  .solution-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .solution-card p {
+    font-size: 0.87rem;
+  }
+
+  .results-visual {
+    min-height: 240px;
+  }
+
+  .results-watermark {
+    font-size: 3.4rem;
+  }
+
+  .results-content {
+    padding: 30px 23px;
+  }
+
+  .contact-form-wrapper {
+    padding: 25px 20px;
+  }
+
+  .footer-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+/* ==================== TELAS MUITO ESTREITAS ==================== */
+
+@media (max-width: 360px) {
+
+  .hero-title {
+    font-size: 1.95rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.55rem;
+  }
+
+  .number-value {
+    font-size: 2.15rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.9rem;
+  }
+
+  .nav-menu {
+    padding-inline: 25px;
+  }
+}
+
+/* ==================== TELAS BAIXAS ==================== */
+
+@media (max-height: 650px) and (min-width: 768px) {
+
+  .hero-content {
+    padding-top: 115px;
+    padding-bottom: 85px;
+  }
+
+  .hero-logo {
+    width: 145px;
+    margin-bottom: 15px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .hero-subtitle {
+    margin: 20px 0 25px;
+  }
+
+  .scroll-indicator {
+    bottom: 12px;
+  }
+}
+
+/* ==================== DISPOSITIVOS TOUCH ==================== */
+
+@media (hover: none), (pointer: coarse) {
+
+  .interactive-card:hover {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+  }
+
+  .card-glow {
+    opacity: 0 !important;
+  }
+
+  .btn,
+  .tab-button,
+  .nav-link {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ==================== MOVIMENTO REDUZIDO ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nav-menu {
+    transition: none;
+  }
+
+  .hero-background {
+    transform: none;
+  }
+
+  .scroll-indicator,
+  .scroll-line {
+    animation: none;
+  }
+
+  .partners-track {
+    transform: none !important;
+  }
+}
+
+
+/* ==============================================
+   CORREÇÃO DEFINITIVA — CARDS 3 + 2
+   ============================================== */
+
+/* Desktop */
+@media (min-width: 992px) {
+
+  .business-grid,
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .business-grid > .business-card,
+  .solutions-grid > .solution-card {
+    grid-column: span 2;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 991px) {
+
+  .business-grid,
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .business-grid > .business-card,
+  .solutions-grid > .solution-card {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .business-grid > .business-card:last-child:nth-child(odd),
+  .solutions-grid > .solution-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - 9px);
+    justify-self: center;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+
+  .business-grid,
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .business-grid > .business-card,
+  .solutions-grid > .solution-card,
+  .business-grid > .business-card:nth-child(4),
+  .business-grid > .business-card:nth-child(5),
+  .solutions-grid > .solution-card:nth-child(4),
+  .solutions-grid > .solution-card:nth-child(5) {
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-self: stretch;
+  }
+}
+
+
+/* ==================== DEPOIMENTOS RESPONSIVOS ==================== */
+
+@media (min-width: 992px) {
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+@media (min-width: 600px) and (max-width: 991px) {
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonial-card:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 10px);
+    justify-self: center;
+  }
+
+}
+
+@media (max-width: 599px) {
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    min-height: 320px;
+    padding: 32px 28px;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+
+}
+
+
+/* ============================================
+   CORREÇÃO RESPONSIVA — NOSSOS NÚMEROS
+   ============================================ */
+
+/* Tablets e celulares: 2 + 2 + 1 */
+@media (max-width: 991px) {
+
+  .numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px 15px;
+  }
+
+  /* Remove os posicionamentos do desktop */
+  .numbers-grid > .number-item,
+  .numbers-grid > .number-item:nth-child(4):nth-last-child(2),
+  .numbers-grid > .number-item:nth-child(5):last-child {
+    grid-column: auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Centraliza o último indicador */
+  .numbers-grid > .number-item:nth-child(5):last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    justify-self: center;
+  }
+
+  .number-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .number-value,
+  .number-item p {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+
+  .numbers-grid {
+    gap: 20px 10px;
+  }
+
+  .number-item {
+    padding: 15px 5px;
+    min-height: 125px;
+  }
+
+  .number-value {
+    font-size: clamp(2.1rem, 9vw, 3rem);
+  }
+
+  .number-item p {
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+}
+
+
+/* ============================================
+   NOVA HERO — RESPONSIVIDADE
+   ============================================ */
+
+/* Notebooks e tablets grandes */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .hero-content {
+    padding-top: 145px;
+    padding-bottom: 110px;
+  }
+
+  .hero-text {
+    max-width: 650px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 5.5vw, 4.8rem);
+  }
+
+  .hero-media {
+    width: 75%;
+    opacity: 0.48;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      #080808 0%,
+      rgba(8, 8, 8, 0.9) 35%,
+      rgba(8, 8, 8, 0.42) 100%
+    );
+  }
+}
+
+/* Celulares */
+
+@media (max-width: 767px) {
+
+  .hero {
+    min-height: 100svh;
+    align-items: center;
+  }
+
+  .hero-content {
+    width: 90%;
+    padding-top: 145px;
+    padding-bottom: 115px;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 100%;
+    align-items: flex-start;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 20px;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-title {
+    max-width: 600px;
+
+    font-size: clamp(2.4rem, 8.5vw, 4rem);
+    line-height: 1.16;
+
+    text-align: left;
+  }
+
+  .hero-subtitle {
+    max-width: 450px;
+    margin: 25px 0 35px;
+
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .hero .btn {
+    width: min(100%, 340px);
+    align-self: flex-start;
+  }
+
+  /* Vídeo vira fundo atmosférico */
+
+  .hero-media {
+    padding-top: 50px;
+    width: fit-content;
+    height: fit-content;
+
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .hero-video {
+    object-position: center;
+    filter: saturate(0.45);
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(8, 8, 8, 0.94),
+        rgba(8, 8, 8, 0.65)
+      ),
+      linear-gradient(
+        0deg,
+        #080808,
+        transparent 35%
+      );
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
+
+  .scroll-line {
+    height: 30px;
+  }
+
+}
+
+/* Celulares pequenos */
+
+@media (max-width: 480px) {
+
+  .hero-content {
+    padding-top: 125px;
+    padding-bottom: 100px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 9vw, 3rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.8;
+  }
+
+  .hero .btn {
+    min-height: 54px;
+    padding: 15px 21px;
+    font-size: 0.72rem;
+  }
+
+}
+
+/* Movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-video {
+    display: none;
+  }
+
+  .hero-background {
+    opacity: 0.28;
+  }
+
+}
+
+
+/* ==================== LOGO RESPONSIVA ==================== */
+
+/* Desktop */
+@media (min-width: 1200px) {
+  :root {
+    --header-height: 105px;
+  }
+
+  .nav-brand img {
+    width: 195px;
+    max-height: 85px;
+  }
+}
+
+/* Tablets e notebooks menores */
+@media (min-width: 768px) and (max-width: 1199px) {
+  :root {
+    --header-height: 85px;
+  }
+
+  .nav-brand img {
+    width: 165px;
+    max-height: 70px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 76px;
+  }
+
+  .nav-brand img {
+    width: 145px;
+    max-height: 62px;
+  }
+}
+
+
+/* ==================== HERO — AJUSTE VERTICAL ==================== */
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .hero-content {
+    padding-top: calc(var(--header-height) + 10px);
+    padding-bottom: 45px;
+  }
+}
+
+/* Tablets e notebooks */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hero-content {
+    padding-top: calc(var(--header-height) + 15px);
+    padding-bottom: 65px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 767px) {
+  .hero-content {
+    padding-top: calc(var(--header-height) + 25px);
+    padding-bottom: 75px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+}
+
+
+/* Notebooks com pouca altura vertical */
+
+@media (min-width: 992px) and (max-height: 800px) {
+  .hero-title {
+    font-size: clamp(2.8rem, 4.2vw, 4.7rem);
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content {
+    padding-top: calc(var(--header-height) + 5px);
+    padding-bottom: 35px;
+  }
+}
+
+/* Ajuste fino — posição vertical da Hero */
+
+@media (min-width: 992px) {
+  .hero-content {
+    transform: translateY(-50px);
+  }
+}
+
+/* ==================== TÍTULOS RESPONSIVOS ==================== */
+
+@media (max-width: 767px) {
+
+  .section-heading h2 {
+    font-size: clamp(1.85rem, 7vw, 2.8rem);
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+    overflow-wrap: break-word;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .section-heading h2 {
+    font-size: clamp(1.7rem, 7.2vw, 2.3rem);
+  }
+
+}
+
+
+/* ============================================
+   NEGÓCIOS — RESPONSIVIDADE ATUALIZADA
+   ============================================ */
+
+/* Desktop: cinco cards lado a lado */
+
+@media (min-width: 1200px) {
+
+  .business-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .business-grid > .business-card {
+    grid-column: auto;
+    min-height: 260px;
+    padding: 25px 20px;
+  }
+
+}
+
+/* Notebooks menores: três cards + dois */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .business-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .business-grid > .business-card {
+    grid-column: span 2;
+    min-height: 250px;
+    padding: 25px;
+  }
+
+  .business-grid > .business-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .business-grid > .business-card:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+
+  .business-card h3 {
+    font-size: 1.15rem;
+  }
+
+}
+
+/* Tablets: duas colunas */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .business-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .business-grid > .business-card {
+    grid-column: auto;
+    min-height: 240px;
+    padding: 24px;
+  }
+
+  .business-grid > .business-card:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 7.5px);
+    justify-self: center;
+  }
+
+  .business-card h3 {
+    font-size: 1.1rem;
+  }
+
+}
+
+/* Celulares pequenos: uma coluna */
+
+@media (max-width: 480px) {
+
+  .business-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .business-grid > .business-card,
+  .business-grid > .business-card:nth-child(4),
+  .business-grid > .business-card:nth-child(5) {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 210px;
+    padding: 28px;
+  }
+
+  .business-card h3 {
+    font-size: 1.25rem;
+    margin-top: 35px;
+  }
+
+  .business-card p {
+    font-size: 0.87rem;
+  }
+
+}
+
+
+/* ============================================
+   SOLUÇÕES — GRID COM SEIS CARDS
+   ============================================ */
+
+/* Desktop: 3 + 3 */
+@media (min-width: 992px) {
+
+  .solutions-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .solutions-grid > .solution-card {
+    grid-column: auto !important;
+    width: 100%;
+  }
+}
+
+/* Tablets: 2 + 2 + 2 */
+@media (min-width: 481px) and (max-width: 991px) {
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solutions-grid > .solution-card {
+    grid-column: auto !important;
+    width: 100%;
+    justify-self: stretch;
+  }
+}
+
+/* Celulares: uma coluna */
+@media (max-width: 480px) {
+
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .solutions-grid > .solution-card {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+  }
+
+  .solution-cta {
+    min-height: 250px;
+    padding: 28px;
+  }
+
+  .solution-cta h3 {
+    font-size: 1.15rem;
+  }
+
+  .solution-cta-button {
+    font-size: 0.65rem;
+  }
+}
+
+
+/* =========================================================
+   RESULTADOS — PORTFÓLIO RESPONSIVO
+   ========================================================= */
+
+/* ==================== DESKTOP ==================== */
+
+@media (min-width: 1200px) {
+
+  .results-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .project-card {
+    height: 285px;
+  }
+
+}
+
+/* ==================== NOTEBOOKS ==================== */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .results-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .project-card {
+    height: 275px;
+  }
+
+  .project-card-name {
+    font-size: 0.82rem;
+  }
+
+  .project-card-details {
+    left: 16px;
+    right: 16px;
+    bottom: 85px;
+  }
+
+}
+
+/* ==================== TABLETS ==================== */
+
+@media (min-width: 600px) and (max-width: 991px) {
+
+  .results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .project-card {
+    height: 310px;
+  }
+
+  .project-card-trigger {
+    padding: 24px;
+  }
+
+  .project-card-name {
+    font-size: 0.95rem;
+  }
+
+  .project-card-details {
+    left: 24px;
+    right: 24px;
+    bottom: 90px;
+  }
+
+}
+
+/* ==================== CELULARES ==================== */
+
+@media (max-width: 599px) {
+
+  .results-section .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .results-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card {
+    height: 330px;
+    border-radius: 0;
+  }
+
+  .project-card-trigger {
+    padding: 25px;
+  }
+
+  .project-card-name {
+    font-size: 1.08rem;
+    line-height: 1.45;
+  }
+
+  .project-card-icon {
+    width: 35px;
+    height: 35px;
+
+    top: 20px;
+    right: 20px;
+  }
+
+  .project-card-details {
+    left: 25px;
+    right: 25px;
+    bottom: 100px;
+  }
+
+  .project-card-label {
+    font-size: 0.65rem;
+  }
+
+  .project-card-details li {
+    font-size: 0.76rem;
+    padding: 7px 10px;
+  }
+
+}
+
+/* ==================== CELULARES PEQUENOS ==================== */
+
+@media (max-width: 380px) {
+
+  .project-card {
+    height: 315px;
+  }
+
+  .project-card-trigger {
+    padding: 20px;
+  }
+
+  .project-card-name {
+    font-size: 0.96rem;
+  }
+
+  .project-card-details {
+    left: 20px;
+    right: 20px;
+    bottom: 95px;
+  }
+
+  .project-card-details li {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
+
+}
+
+/* ==================== COMPORTAMENTO TOUCH ==================== */
+
+/*
+  Em dispositivos sem hover, o card não deve
+  crescer além da largura da tela.
+
+  O JavaScript controlará a classe .is-active
+  para revelar os serviços por toque.
+*/
+
+@media (hover: none), (pointer: coarse) {
+
+  .project-card:hover,
+  .project-card.is-active {
+    transform: none;
+  }
+
+  .project-card.is-active {
+    z-index: 2;
+
+    border-color: var(--color-accent);
+
+    box-shadow:
+      0 12px 35px rgba(0, 0, 0, 0.35),
+      0 0 20px rgba(183, 255, 60, 0.06);
+  }
+
+  .project-card.is-active > img {
+    transform: scale(1.04);
+  }
+
+}
+
+/* ==================== ACESSIBILIDADE ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .project-card,
+  .project-card > img,
+  .project-card-details,
+  .project-card-name,
+  .project-card-icon {
+    transition: none !important;
+    animation: none !important;
+  }
+
+}
+
+
+/* ============================================
+   CORREÇÃO — CARDS DE RESULTADOS NO MOBILE
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  .results-grid {
+    overflow: visible;
+  }
+
+  .results-grid > .project-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    transform: none;
+    transform-origin: center;
+  }
+
+  /* Impede a expansão por hover */
+
+  .results-grid > .project-card:hover,
+  .results-grid > .project-card.is-active,
+  .results-grid > .project-card:focus-within {
+    transform: none !important;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Mantém o destaque visual ao interagir */
+
+  .results-grid > .project-card.is-active {
+    border-color: var(--color-accent);
+
+    box-shadow:
+      0 10px 35px rgba(0, 0, 0, 0.35),
+      0 0 15px rgba(183, 255, 60, 0.08);
+  }
+
+  /* Permite revelar os serviços sem ampliar o card */
+
+  .results-grid > .project-card.is-active .project-card-details,
+  .results-grid > .project-card:hover .project-card-details {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+}
+
+/* ============================================
+   RESULTADOS — INTERAÇÃO POR TOQUE
+   ============================================ */
+
+@media (hover: none), (pointer: coarse) {
+
+  /* Hover sozinho não revela os serviços */
+
+  .results-grid > .project-card:not(.is-active):hover
+  .project-card-details {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(18px);
+  }
+
+  .results-grid > .project-card:not(.is-active):hover
+  .project-card-name {
+    color: var(--color-white);
+  }
+
+  .results-grid > .project-card:not(.is-active):hover
+  .project-card-icon {
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--color-white);
+    transform: none;
+  }
+
+  /* Card selecionado revela os serviços */
+
+  .results-grid > .project-card.is-active
+  .project-card-details {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ============================================
+   DEPOIMENTOS — RESPONSIVIDADE
+   ============================================ */
+
+@media (min-width: 992px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 600px) and (max-width: 991px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonials-grid > .testimonial-card:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 11px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 599px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid > .testimonial-card {
+    grid-column: auto;
+    width: 100%;
+    min-height: 320px;
+    padding: 32px 28px;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ============================================
+   NEGÓCIOS — ALINHAMENTO RESPONSIVO
+   ============================================ */
+
+/* Desktop: cinco cards */
+
+@media (min-width: 1200px) {
+
+  .business-grid > .business-card {
+    min-height: 300px;
+  }
+
+  .business-grid > .business-card h3 {
+    min-height: 3.5em;
+    font-size: clamp(0.85rem, 1vw, 1.05rem);
+  }
+
+}
+
+/* Tablets e notebooks */
+
+@media (min-width: 481px) and (max-width: 1199px) {
+
+  .business-grid > .business-card {
+    min-height: 280px;
+  }
+
+  .business-grid > .business-card h3 {
+    min-height: 3.2em;
+  }
+
+}
+
+/* Celulares */
+
+@media (max-width: 480px) {
+
+  .business-grid > .business-card {
+    min-height: 250px;
+  }
+
+  .business-grid > .business-card h3 {
+    min-height: 0;
+    margin-bottom: 14px;
+  }
+
+}
+
+
+/* ============================================
+   HERO — TÍTULO RESPONSIVO
+   ============================================ */
+
+/* Desktop amplo */
+
+@media (min-width: 1600px) {
+  .hero-title {
+    font-size: clamp(5rem, 5.5vw, 6.5rem);
+  }
+}
+
+/* Desktop e notebook */
+
+@media (min-width: 992px) and (max-width: 1599px) {
+  .hero-title {
+    font-size: clamp(3.2rem, 5.2vw, 5.5rem);
+  }
+}
+
+/* Tablets */
+
+@media (min-width: 600px) and (max-width: 991px) {
+  .hero-title {
+    font-size: clamp(2.4rem, 5.3vw, 3.7rem);
+    line-height: 1.15;
+  }
+}
+
+/* Celulares */
+
+@media (max-width: 599px) {
+  .hero-title {
+    font-size: clamp(1.75rem, 7.3vw, 2.7rem);
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-title-line {
+    white-space: nowrap;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Celulares pequenos */
+
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: clamp(1.55rem, 7vw, 1.9rem);
+  }
+}
+
+
+/* ============================================
+   HERO MOBILE — VÍDEO SEM CORTES
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  .hero {
+    position: relative;
+
+    width: 100%;
+    height: calc(100svh - var(--header-height));
+    min-height: 0;
+
+    padding: 0;
+    margin: 0;
+
+    background: #050505;
+    overflow: hidden;
+  }
+
+  /* Área do vídeo ocupa a Hero inteira */
+
+  .hero .hero-media {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #050505;
+  }
+
+  /* Vídeo inteiro, sem cortes */
+
+  .hero .hero-video {
+    position: relative;
+    inset: auto;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    transform: none;
+    filter: none;
+  }
+
+  /* Indicador de rolagem */
+
+  .hero .scroll-indicator {
+    position: absolute;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+
+}
+
+
+/* ============================================
+   HERO MOBILE — ALTURA NATURAL DO VÍDEO
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* A Hero deixa de ocupar a tela inteira */
+  .hero {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+
+    padding: 0;
+    margin: 0;
+
+    overflow: hidden;
+    background: #050505;
+  }
+
+  /* Container acompanha a altura do vídeo */
+  .hero .hero-media {
+    position: relative;
+    inset: auto;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+  /* Vídeo mantém sua proporção original */
+  .hero .hero-video {
+    position: relative;
+    inset: auto;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+    max-height: none;
+
+    object-fit: contain;
+    object-position: center;
+
+    transform: none;
+  }
+
+  /* Oculta o indicador de scroll no mobile */
+  .hero .scroll-indicator {
+    display: none;
+  }
+
+}
+
+
+/* ============================================
+   SOLUÇÕES — ABAS DESLIZÁVEIS NO MOBILE
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Container horizontal das abas */
+
+  .solutions-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 5px 28px 14px 0;
+
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .solutions-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Impede que os botões sejam comprimidos */
+
+  .solutions-tabs > button,
+  .solutions-tabs > .tab-button {
+    flex: 0 0 auto;
+
+    width: auto;
+    min-width: max-content;
+
+    white-space: nowrap;
+
+    scroll-snap-align: start;
+  }
+
+  /* Dica visual abaixo das abas */
+
+  .solutions-scroll-hint {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    margin-top: 4px;
+    margin-bottom: 26px;
+
+    color: var(--color-accent);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .solutions-scroll-hint i {
+    font-size: 1rem;
+    animation: solutionsHintArrow 1.8s ease-in-out infinite;
+  }
+
+}
+
+/* Indicador aparece apenas no mobile */
+
+@media (min-width: 768px) {
+  .solutions-scroll-hint {
+    display: none;
+  }
+}
+
+/* Movimento discreto da seta */
+
+@keyframes solutionsHintArrow {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solutions-scroll-hint i {
+    animation: none;
+  }
+}
+
+.solutions-scroll-hint.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.solutions-scroll-hint {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+/* ============================================
+   NEGÓCIOS — CARDS HORIZONTAIS NO MOBILE
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Um card por linha */
+
+  .business-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  /* Cards retangulares */
+
+  .business-grid > .business-card,
+  .business-grid > .business-card:nth-child(4),
+  .business-grid > .business-card:nth-child(5),
+  .business-grid > .business-card:nth-child(4):nth-last-child(2),
+  .business-grid > .business-card:nth-child(5):last-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 42px;
+    grid-template-rows: auto auto 1fr;
+    column-gap: 15px;
+    row-gap: 7px;
+    align-content: center;
+    align-items: start;
+
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 155px;
+
+    padding: 24px;
+
+    text-align: left;
+  }
+
+  /* Número */
+
+  .business-card .card-index {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  /* Título */
+
+  .business-grid > .business-card h3 {
+    grid-column: 1;
+    grid-row: 2;
+
+    min-height: 0;
+    margin: 0;
+
+    font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+    line-height: 1.4;
+  }
+
+  /* Descrição */
+
+  .business-grid > .business-card p {
+    grid-column: 1;
+    grid-row: 3;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 0.83rem;
+    line-height: 1.6;
+  }
+
+  /* Ícone alinhado à direita */
+
+  .business-card .card-decoration {
+    position: relative;
+    inset: auto;
+
+    grid-column: 2;
+    grid-row: 1 / 4;
+
+    align-self: center;
+    justify-self: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .business-card .card-decoration .bi {
+    font-size: 2rem;
+  }
+
+  /* Preserva a iluminação dos cards */
+
+  .business-card .card-glow {
+    pointer-events: none;
+  }
+}
+
+/* Celulares pequenos */
+
+@media (max-width: 380px) {
+
+  .business-grid > .business-card {
+    min-height: 145px;
+    padding: 20px;
+    column-gap: 10px;
+  }
+
+  .business-card .card-decoration .bi {
+    font-size: 1.7rem;
+  }
+
+  .business-grid > .business-card p {
+    font-size: 0.78rem;
+  }
+}
